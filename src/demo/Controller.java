@@ -11,6 +11,7 @@ public class Controller {
             ui.goodsAmount();
             running = ui.keepBuying();
             ui.calculateTotalBeforeTax();
+            ui.discount();
             ui.calculateTotalAfterTax();
         }
 

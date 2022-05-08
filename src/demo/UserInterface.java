@@ -70,8 +70,22 @@ public class UserInterface {
             }
         }
     }
+    public double discount() {
+        if (totalPriceBeforeTax >= 50000)
+            totalPriceBeforeTax *= 0.85;
+        else if (totalPriceBeforeTax >= 10000)
+            totalPriceBeforeTax *= 0.9;
+        else if (totalPriceBeforeTax >= 7000)
+            totalPriceBeforeTax *= 0.93;
+        else if (totalPriceBeforeTax >= 5000)
+            totalPriceBeforeTax *= 0.95;
+        else if (totalPriceBeforeTax >= 1000)
+            totalPriceBeforeTax *= 0.97;
+        return totalPriceBeforeTax;
+    }
+
     public double calculateTotalAfterTax(){
-        totalPrice += price * amount * tax;
+        totalPrice += totalPriceBeforeTax * tax;
         return totalPrice;
     }
     public double calculateTotalBeforeTax() {
